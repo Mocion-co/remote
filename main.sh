@@ -10,6 +10,9 @@ print_hi() {
 
 install() {
   echo $(python3 --version)
+  echo $(python3 -m venv .venv)
+  echo $(source .venv/bin/activate)
+  echo $(pip3 install -r requirements.txt)
 }
 
 print_hi
