@@ -1,38 +1,16 @@
+from .base import Base
+
 class Drupal10(Base):
-  def __init__(self, site_name="My Drupal Site", theme="olivero",
-         host="localhost", port=3306, database="drupal",
-         user="drupal", password=""):
-    """
-    Constructor for Drupal10 class
+  def __init__(self, www_folder="/var/www", repository='', domain="test.com", subdomain=".", branch="main"):
 
-    Args:
-      site_name (str): Name of the Drupal site
-      theme (str): Default theme
-      host (str): Database host
-      port (int): Database port
-      database (str): Database name
-      user (str): Database user
-      password (str): Database password
-    """
     # Call parent constructor
-    super().__init__(host, port, database, user, password)
+    super().__init__(www_folder, repository, domain, subdomain, branch)
 
-    # Drupal specific attributes
-    self.site_name = site_name
-    self.theme = theme
-    self.version = "10.0"
+  def deploy(self):
+    print(self.www_folder)
+    print(self.repository)
+    print(self.domain)
+    print(self.subdomain)
+    print(self.branch)
 
-  def get_site_info(self):
-    """Returns the Drupal site information"""
-    return {
-      "site_name": self.site_name,
-      "theme": self.theme,
-      "version": self.version
-    }
-
-  def get_full_info(self):
-    """Returns both connection and site information"""
-    return {
-      **self.get_connection_info(),
-      **self.get_site_info()
-    }
+    return True

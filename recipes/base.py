@@ -1,27 +1,11 @@
 
 class Base:
-  def __init__(self, host="localhost", port=3306, database="mydatabase", user="root", password=""):
-    """
-    Constructor for Base class
+  def __init__(self, www_folder="/var/www", repository='', domain="test.com", subdomain=".", branch="main"):
+    self.www_folder = www_folder
+    self.repository = repository
+    self.domain = domain
+    self.subdomain = subdomain
+    self.branch = branch
 
-    Args:
-      host (str): Database host
-      port (int): Database port
-      database (str): Database name
-      user (str): Database user
-      password (str): Database password
-    """
-    self.host = host
-    self.port = port
-    self.database = database
-    self.user = user
-    self.password = password
-
-  def get_connection_info(self):
-    """Returns the connection information"""
-    return {
-      "host": self.host,
-      "port": self.port,
-      "database": self.database,
-      "user": self.user
-    }
+  def deploy(self):
+    return True
