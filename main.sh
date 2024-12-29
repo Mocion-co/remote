@@ -10,10 +10,10 @@ print_hi() {
 
 install() {
   echo $(python3 --version)
-  echo $(python3 --user deployer -m venv .venv)
+  echo $(python3 -m venv .venv)
   echo $(. .venv/bin/activate)
-  echo $(pip3 install --upgrade pip --user deployer)
-  echo $(pip3 install --user deployer -r requirements.txt)
+  echo $(pip3 install --upgrade pip)
+  echo $(pip3 install -r requirements.txt)
 }
 
 print_hi
