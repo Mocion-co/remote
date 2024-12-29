@@ -18,7 +18,7 @@ def main():
   project = None
 
   if args.type == 'drupal10':
-    project = Drupal10(os.getenv('WWW_FOLDER'), args.repository, args.domain, args.subdomain, args.branch)
+    project = Drupal10(os.getenv('WWW_FOLDER'), args.repository, args.domain, args.branch)
 
   if project is not None:
     project.deploy()
