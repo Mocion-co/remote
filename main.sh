@@ -12,7 +12,7 @@ install() {
   echo $(python3 --version)
   echo $(python3 -m venv .venv)
   echo $(source .venv/bin/activate)
-  echo $(python3 -m pip install --upgrade pip)
+  echo $(pip3 install --upgrade pip)
   echo $(pip3 install -r requirements.txt)
 }
 
