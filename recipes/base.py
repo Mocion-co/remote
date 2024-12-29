@@ -17,7 +17,13 @@ class Base:
     return ''.join(random.choice(safe_chars) for _ in range(length))
 
   def prepareFolders(self):
-    os.makedirs(self.www_folder + '/' + self.domain + '/' + self.subdomain)
+    if self.branch == 'main':
+      directory = self.www_folder + '/' + self.domain + '/www'
+    else:
+      directory = self.www_folder + '/' + self.domain + '/' + self.branch
+
+    if not os.path.exists(directory):
+      os.makedirs(directory)
 
   def deploy(self):
     return True
