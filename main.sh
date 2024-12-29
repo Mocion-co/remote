@@ -8,4 +8,9 @@ print_hi() {
   echo ""
 }
 
+install() {
+  echo $(python3 --version)
+}
+
 print_hi
+install
