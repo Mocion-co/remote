@@ -1,5 +1,4 @@
 import argparse
-import os
 
 def main():
   parser = argparse.ArgumentParser(description="Project configuration automation.")
